@@ -21,7 +21,6 @@ class productsController{
         session_start();
         $this->view->showHome();
     }
-
     function showProducts(){
         session_start();
         $products = $this->model->getProducts();
@@ -40,17 +39,14 @@ class productsController{
         $categories = $this->categoryModel->getAllCategory();
         $this->view->showProduct($product, $categories);
     }
-
     function showProductWhitInnerJoin($id){
         session_start();
         $product = $this->model->innerJoinProductAndNameCategory($id);        
         $this->view->showProduct($product);
     }
-
     function addProducts(){
         $this->authHelper->checkLoggedIn();
         if(isset($_POST["name"]) && isset($_POST["price"])){
-            
                 $name = $_POST['name'];
                 $details = $_POST['detail'];
                 $price = $_POST['price'];
@@ -60,17 +56,14 @@ class productsController{
             }
                 $this->view->showError('Faltan datos obligatorios');
             }
-
     function deleteProduct($id){
         $this->authHelper->checkLoggedIn();
         $this->model->removeProduct($id);
         header("Location: " .PRODUCTS);
     }
-
     function updateProduct($id){
         $this->authHelper->checkLoggedIn();
         if(isset($_POST['name']) || isset($_POST['detail']) || isset($_POST['price']) || isset($_POST['category'])){
-            
                 $name = $_POST['name'];
                 $details = $_POST['detail'];
                 $price = $_POST['price'];
@@ -86,10 +79,6 @@ class productsController{
         $categories = $this->categoryModel->getAllCategory();
         $this->view->showFormEditProduct($product,$categories,$id);
     }
-    /*function showFormAddProduct(){
-        $this->authHelper->checkLoggedIn();
-        $product = $this->model->
-    }*/
     function showCategory($id){
         session_start();
         $category = $this->categoryModel->getCategoryById($id);
