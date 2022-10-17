@@ -46,9 +46,8 @@ function updateProduct($name,$details,$price,$category,$id,){
     $query->execute([$name,$details,$price,$category,$id,]);
 }
 function innerJoinProductAndNameCategory($id){
-    $query = $this->db->prepare("SELECT products.*, category.name, FROM products 
-    JOIN category ON products.ID_Category_FK = category.ID_Category");
-    $query->execute();
+    $query = $this->db->prepare("SELECT products.*, category.name FROM products JOIN category ON products.ID_Category_FK = category.ID_Category WHERE products.ID_Category_FK");
+    $query->execute([$id]);
     $products= $query->fetch(PDO::FETCH_OBJ);
     return $products;
 }

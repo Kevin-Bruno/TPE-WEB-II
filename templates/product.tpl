@@ -5,7 +5,7 @@
       <p class="author">Detalle: <span>{{$product->details}}</span></p>
       <p class="release-date">Precio: {{$product->price}}</p>
       <div class="description-container">
-      <p class="description-item">Categoria: {{$product->name}}<p>
+    <p class="description-item">Categoria:{{$product->name}}<p>
       </div>
       </div>
     </div>

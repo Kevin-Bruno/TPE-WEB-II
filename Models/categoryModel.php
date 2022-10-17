@@ -30,6 +30,13 @@ function getAllCategory(){
 function getCategoryById($id){
         $query = $this->db->prepare('SELECT * FROM category WHERE ID_Category = ?');
         $query->execute([$id]);
+        $category = $query->fetchAll(PDO::FETCH_OBJ);
+        return $category;
+}
+
+function getCategoryByName($id){
+    $query = $this->db->prepare('SELECT name FROM category WHERE ID_Category = ?');
+        $query->execute($id);
         $category = $query->fetch(PDO::FETCH_OBJ);
         return $category;
 }
