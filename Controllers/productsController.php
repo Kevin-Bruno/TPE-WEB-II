@@ -41,9 +41,9 @@ class productsController{
     }
     function showProductWhitInnerJoin($id){
         session_start();
-        $product = $this->model->innerJoinProductAndNameCategory($id); 
-        $category =$this->categoryModel->getCategoryById($id);       
-        $this->view->showProduct($product,$category);
+        $product = $this->model->innerJoinProductAndNameCategory($id);        
+        $this->view->showProduct($product);
+        
     }
     function addProducts(){
         $this->authHelper->checkLoggedIn();

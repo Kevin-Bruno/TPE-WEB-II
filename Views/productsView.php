@@ -22,8 +22,8 @@ class productsView {
         $this->smarty->assign('category', $category);
         $this->smarty->display('templates/category.tpl');
     }
-    function showProduct($product,$category){
-        $this->smarty->assign('category', $category);
+    function showProduct($product){
+        var_dump($product);
         $this->smarty->assign('product', $product);
         $this->smarty->display('templates/product.tpl');
     }

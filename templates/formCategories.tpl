@@ -12,7 +12,7 @@
 {{foreach from=$categories item=$category}}
   <li>
       <div class="card-body">
-      {$category->name}:  
+      {$category->nameCategory}:  
       {{if isset($smarty.session.IS_LOGGED)}}
       <a class="btn btn-danger" href="deleteCategory/{$category->ID_Category}"> Borrar </a>
       <a class="btn btn-danger" href="showUpdateCategory/{$category->ID_Category}"> Actualizar </a>

@@ -9,7 +9,7 @@
 <input type="text" name="price" id="">
 <select id="category" name="category">
 {{foreach from=$categories item=$category}}
-  <option value="{{$category->ID_Category}}">{{$category->name}}</option>
+  <option value="{{$category->ID_Category}}">{{$category->nameCategory}}</option>
 {{/foreach}}
 </select>
 <button type="submit">Enviar</button>

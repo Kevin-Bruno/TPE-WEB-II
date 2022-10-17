@@ -12,7 +12,7 @@
     {{if  {{$category->ID_Category}} eq {{$product->ID_Category_FK}} }}
     selected
     {{/if}}
-  {{/if}}>{{$category->name}}
+  {{/if}}>{{$category->nameCategory}}
   </option>
 {{/foreach}}
 </select>

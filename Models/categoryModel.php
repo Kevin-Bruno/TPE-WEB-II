@@ -35,7 +35,7 @@ function getCategoryById($id){
 }
 
 function getCategoryByName($id){
-    $query = $this->db->prepare('SELECT name FROM category WHERE ID_Category = ?');
+    $query = $this->db->prepare('SELECT nameCategory FROM category WHERE ID_Category = ?');
         $query->execute($id);
         $category = $query->fetch(PDO::FETCH_OBJ);
         return $category;
@@ -44,7 +44,7 @@ function getCategoryByName($id){
 
 
 function insertCategory($name){
-        $query = $this->db->prepare('INSERT INTO category (name) VALUES (?)');
+        $query = $this->db->prepare('INSERT INTO category (nameCategory) VALUES (?)');
         $query->execute([$name]);
     return $this->db->lastInsertId();
 }
@@ -53,7 +53,7 @@ function deleteCategory($id){
     $query->execute([$id]);
 }
 function updateCategory($id){
-    $query = $this->db->prepare('UPDATE  category SET name WHERE ID_Category=?');
+    $query = $this->db->prepare('UPDATE  category SET nameCategory WHERE ID_Category=?');
     $query->execute([$id]);
 }
 
